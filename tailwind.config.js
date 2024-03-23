@@ -1,16 +1,25 @@
+import { createThemes } from 'tw-colors';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    colors: {
-      primary: '#...',
-      secondary: '#...',
-      accent: '#...',
-      text: 'green',
+    extend: {
+      fontFamily: {
+        Lora: 'Lora',
+      },
     },
-    fontFamily: {
-      Lora: "Lora"
-    }
   },
-  plugins: [],
+  plugins: [
+    createThemes({
+      light: {
+        primary: 'pink',
+        secondary: 'green'
+      },
+      dark: {
+        primary: 'purple',
+        secondary: 'orange'
+      },
+    }),
+  ],
 };
