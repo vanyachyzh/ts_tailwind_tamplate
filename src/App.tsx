@@ -6,7 +6,7 @@ import SecondPage from './pages/SecondPage';
 
 function App() {
   return (
-    <div className="text-text font-Lora bg-red-500">
+    <div>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/second" element={<SecondPage />} />
