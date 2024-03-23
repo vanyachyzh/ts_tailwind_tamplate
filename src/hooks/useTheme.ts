@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 
+const localTheme = localStorage.getItem('theme');
+
 const useTheme = (
   initialTheme: 'light' | 'dark',
 ): React.RefObject<HTMLButtonElement> => {
   const buttonRef = useRef<HTMLButtonElement>(null);
-  const [theme, setTheme] = useState(initialTheme);
+  const [theme, setTheme] = useState(localTheme ?? initialTheme);
 
   const html = document.querySelector('html');
 
@@ -29,6 +31,7 @@ const useTheme = (
 
     html.classList.add(theme);
     html.classList.remove(theme === 'light' ? 'dark' : 'light');
+    localStorage.setItem('theme', theme);
   }, [theme]);
 
   const toggleTheme = () => {
