@@ -18,3 +18,6 @@ html {
   display: none;
 }
 
+.section {
+  @apply w-full px-[3rem] md:px-[6rem] lg:m-auto lg:w-[80rem] lg:max-w-[90vw] lg:px-0;
+}
