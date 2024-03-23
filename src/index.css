@@ -3,3 +3,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  @apply scroll-smooth text-[12px] md:text-[14px] lg:text-[16px];
+}
+
+.hiddenScrollBar {
+  -ms-overflow-style: none;
+  /* scrollbar-width: none; */
+  scroll-behavior: smooth;
+}
+
+.hiddenScrollBar::-webkit-scrollbar {
+  display: none;
+}
+

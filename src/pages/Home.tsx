@@ -1,5 +1,9 @@
+import { useScroll } from '../hooks/useScroll';
+
 const Home = () => {
-  return <div>Home</div>;
+  useScroll(true);
+
+  return <div className="h-[200vh]">Home</div>;
 };
 
 export default Home;
