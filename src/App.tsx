@@ -11,6 +11,7 @@ function App() {
       <Route path="/" element={<Home />} />  
       <Route path="/second" element={<SecondPage />} />
       <Route path="*" element={<ErrorPage />} />
+      <Route path="*" element={<ErrorPage />} />
     </Routes>
   );
 }
