@@ -1,0 +1,27 @@
+name: Run Tests
+
+on:
+  push: # Запускається при будь-якому пуші в репозиторій
+    branches:
+      - '**' # Це означає, що буде спрацьовувати на будь-яку гілку
+
+jobs:
+  test:
+    runs-on: ubuntu-latest # Використовуємо останній Ubuntu для запуску
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3 # Крок для отримання коду репозиторію
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16' # Вказуємо версію Node.js
+
+      - name: Install dependencies
+        run: |
+          npm install  # Встановлення залежностей
+
+      - name: Run tests
+        run: |
+          npm test  # Запуск тестів
